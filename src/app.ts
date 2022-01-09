@@ -18,6 +18,9 @@ import appHooks from './app.hooks';
 import channels from './channels';
 import { HookContext as FeathersHookContext } from '@feathersjs/feathers';
 import authentication from './authentication';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import redisCache from 'feathers-redis-cache';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const app: Application = express(feathers());
@@ -54,5 +57,11 @@ app.use(express.notFound());
 app.use(express.errorHandler({ logger } as any));
 
 app.hooks(appHooks);
+
+// configure the redis client
+app.configure(redisCache.client({ errorLogger: logger.error }));
+// you can change cache path prefix by passing `pathPrefix` option
+// if not passed default prefix '/cache' will be used
+app.configure(redisCache.services({ pathPrefix: '/cache' }));
 
 export default app;

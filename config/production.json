@@ -1,4 +1,7 @@
 {
   "host": "pokodex-api-app.feathersjs.com",
-  "port": "PORT"
+  "port": "PORT",
+  "redis": {
+    "url": "REDIS_URL"
+  }
 }

@@ -27,7 +27,7 @@
     "test": "npm run lint && npm run compile && npm run mocha",
     "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
     "dev": "ts-node-dev --no-notify src/",
-    "heroku-postbuild":"npm run compile",
+    "heroku-postbuild": "npm run compile",
     "start": "node lib/",
     "mocha": "mocha --require ts-node/register --require source-map-support/register \"test/**/*.ts\" --recursive --exit",
     "compile": "shx rm -rf lib/ && tsc"
@@ -67,6 +67,7 @@
     "@types/lodash": "^4.14.178",
     "@types/mocha": "^9.0.0",
     "@types/serve-favicon": "^2.5.3",
+    "@types/socket.io": "^3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "axios": "^0.24.0",

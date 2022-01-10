@@ -54,6 +54,7 @@
     "feathers-nedb": "^6.0.0",
     "feathers-redis-cache": "^1.2.1",
     "helmet": "^4.6.0",
+    "lodash": "^4.17.21",
     "node-fetch": "2.6.1",
     "serve-favicon": "^2.5.0",
     "winston": "^3.3.3"
@@ -62,6 +63,7 @@
     "@types/compression": "^1.7.2",
     "@types/cors": "^2.8.12",
     "@types/jsonwebtoken": "^8.5.6",
+    "@types/lodash": "^4.14.178",
     "@types/mocha": "^9.0.0",
     "@types/serve-favicon": "^2.5.3",
     "@typescript-eslint/eslint-plugin": "^5.9.0",

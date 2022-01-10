@@ -4,7 +4,6 @@ import { BadRequest, MethodNotAllowed } from '@feathersjs/errors';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import fetch from 'node-fetch';
-import _ from 'lodash';
 
 interface Data { }
 

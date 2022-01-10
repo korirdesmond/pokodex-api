@@ -28,5 +28,11 @@
       "passwordField": "password"
     }
   },
-  "nedb": "../data"
+  "nedb": "../data",
+  "redisCache" : {
+    "defaultDuration": 3600,
+    "parseNestedRoutes": true,
+    "removePathFromCacheKey": true,
+    "env": "NODE_ENV"
+  }
 }

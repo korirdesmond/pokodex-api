@@ -10,6 +10,7 @@ export default function (app: Application): NeDB<any> {
   });
 
   Model.ensureIndex({ fieldName: 'email', unique: true });
+  Model.ensureIndex({ fieldName: 'username', unique: true });
 
   return Model;
 }

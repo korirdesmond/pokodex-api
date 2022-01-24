@@ -47,7 +47,6 @@
     "@feathersjs/errors": "^4.5.12",
     "@feathersjs/express": "^4.5.12",
     "@feathersjs/feathers": "^4.5.12",
-    "@feathersjs/socketio": "^4.5.12",
     "@feathersjs/transport-commons": "^4.5.12",
     "@seald-io/nedb": "^2.2.0",
     "compression": "^1.7.4",

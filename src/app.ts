@@ -7,7 +7,6 @@ import cors from 'cors';
 import feathers from '@feathersjs/feathers';
 import configuration from '@feathersjs/configuration';
 import express from '@feathersjs/express';
-import socketio from '@feathersjs/socketio';
 
 
 import { Application } from './declarations';
@@ -42,7 +41,6 @@ app.use('/', express.static(app.get('public')));
 
 // Set up Plugins and providers
 app.configure(express.rest());
-app.configure(socketio());
 
 // Configure other middleware (see `middleware/index.ts`)
 app.configure(middleware);

@@ -20,8 +20,8 @@ export default {
 
   after: {
     all: [],
-    find: [redisCache.after({expiration: 3600})],
-    get: [redisCache.after({expiration: 3600})],
+    find: [redisCache.after({expiration: 5})],
+    get: [redisCache.after({expiration: 5})],
     create: [],
     update: [],
     patch: [],

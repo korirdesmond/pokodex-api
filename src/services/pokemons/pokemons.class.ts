@@ -16,6 +16,7 @@ interface Pokomon {
   species: Array<any>;
   stats: Array<any>;
   favourite?: boolean;
+  description: string;
 }
 
 interface Pokedex {
@@ -44,8 +45,11 @@ export class Pokemons implements ServiceMethods<Data> {
     const allPokemons = res.results;
 
     for (const pokemon of allPokemons) {
-      let pokemonDetail:any = await fetch(pokemon.url);
+      let pokemonDetail: any = await fetch(pokemon.url);
       pokemonDetail = await pokemonDetail.json();
+      let speciesDetail: any = await fetch(pokemonDetail.species.url);
+      speciesDetail = await speciesDetail.json();
+      const diamondGame = speciesDetail['flavor_text_entries'].find((item: any) => item.version.name === "diamond");
       const pokedexService: any = this.app.service('pokedex');
       const pokedex = await pokedexService.find({ query: { pokemonId: pokemonDetail.id, favourite: true } });
 
@@ -58,6 +62,7 @@ export class Pokemons implements ServiceMethods<Data> {
         species: pokemonDetail.species,
         stats: pokemonDetail.stats,
         favourite: pokedex.total === 0 ? false : true,
+        description: diamondGame['flavor_text'] || '',
       };
       results.push(item);
     }

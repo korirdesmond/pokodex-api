@@ -10,7 +10,6 @@ const getPokemon = async (
   const { app, id } = context;
   const pokemonService = app.service('pokemons');
   const pokemon = await pokemonService.get(id)
-  console.log('pokomon', pokemon);
   context.result = { ...pokemon };
 
   return context;
